@@ -22,6 +22,7 @@ body {
 	background-color: #FFF;
 	display: none;
 	cursor: default;
+	letter-spacing: .15em;
 }
 
 #wrongLetters{
