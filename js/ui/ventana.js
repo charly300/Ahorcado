@@ -5,7 +5,7 @@ function Ventana(){
 	}
 
 	this.createEnvironment = function(){
-		document.getElementById('letraInputDiv').style.display = 'block';
+		/*document.getElementById('letraInputDiv').style.display = 'block';*/
 		document.getElementById('resultUser').style.display = 'block';
 		document.getElementById('keyBoard').style.display = 'block';
 		document.getElementById('wrongLetters').style.display = 'block';
@@ -19,9 +19,6 @@ function Ventana(){
 		document.getElementById('wrongLetters').innerHTML += c;
 	}
 
-	this.clearInputLetter = function(){
-		document.getElementById('inputLetter').value = '';
-	}
 
 	this.getInputLetter = function(){
 		return document.getElementById('inputLetter').value;
