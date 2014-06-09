@@ -7,6 +7,8 @@ function Ventana(){
 	this.createEnvironment = function(){
 		document.getElementById('letraInputDiv').style.display = 'block';
 		document.getElementById('resultUser').style.display = 'block';
+		document.getElementById('keyBoard').style.display = 'block';
+		document.getElementById('wrongLetters').style.display = 'block';
 	}
 
 	this.setPalabraUser = function(p){

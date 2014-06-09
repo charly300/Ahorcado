@@ -1,0 +1,40 @@
+.keyBoard{
+    margin-left: 30%;;
+    margin-right: 30%;
+    display: none;
+}
+
+.fila {
+    background-color: #DCDCDC;
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    clear: both;
+}
+
+.fila li{
+	padding: 0;
+   margin: 0;
+   width: 30px;
+   float: left;
+   font-size: 1.2em;
+	cursor: pointer;
+	-ms-user-select: none;
+	-moz-user-select: none;
+}
+
+.fila li:hover{
+    background-color: #FFF;
+    border-bottom-color: #000;
+    border-style: solid;
+}
+
+.fila li:nth-child(even) {
+    background-color: #e8e8e8;
+}
+
+.fila li:nth-child(odd) {
+    background-color: #DCDCDC;
+}
+
+

@@ -3,7 +3,7 @@ String.prototype.replaceAt = function(index, character) {
 }
 
 function Ahorcado(){
-	var film = {Title: 'rapido y furioso'};
+	var film = {Title: 'RAPIDO Y FURIOSO'};
 	var palabraUser = '';	
 	
 	this.inicializarPalabraUser = function(){
@@ -26,8 +26,9 @@ function Ahorcado(){
 
 	this.letterExists = function(c){
 		for(var i = 0; i < film.Title.length; i++)
-			if(film.Title[i] == c)
+			if(film.Title[i] == c){
 				return true;
+				
 		throw c;		
 	};
 

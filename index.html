@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-	<title>IMDB</title>
+	<title>Ahorcado</title>
 
 	<script type="text/javascript" src="js/core/ahorcado.js"></script>
 	<script type="text/javascript" src="js/ui/ventana.js"></script>
@@ -12,22 +12,76 @@
 	<script type="text/javascript" src="js/controller/initialize.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="css/index.css" >
-
+	<link rel="stylesheet" type="text/css" href="css/keyBoard.css" >
 </head>
 
 
 <body>
-	<a id="start" href=# onclick="start()"> Start </a>
+	<div id="start"  class="blanco" onclick="start()"> Start </div>
 	
 	<div id="letraInputDiv">
 		<input id="inputLetter" type="text" size=1 maxlength=1 />
 		<a href=# onclick="tryLetter()"> Try </a>		
 	</div>
 
-	<div id="resultUser">
+	<div id="resultUser" class="blanco">
 	</div>
 
 	<div id="wrongLetters"></div>
+	
+	<div id="keyBoard" class="keyBoard">
+
+        <ul class="fila"> 
+            <li onclick="keyBoard(this.innerHTML)">1</li>
+            <li onclick="keyBoard(this.innerHTML)">2</li>
+            <li onclick="keyBoard(this.innerHTML)">3</li>
+            <li onclick="keyBoard(this.innerHTML)">4</li>
+            <li onclick="keyBoard(this.innerHTML)">5</li>
+            <li onclick="keyBoard(this.innerHTML)">6</li>
+            <li onclick="keyBoard(this.innerHTML)">7</li>
+            <li onclick="keyBoard(this.innerHTML)">8</li>
+            <li onclick="keyBoard(this.innerHTML)">9</li>
+            <li onclick="keyBoard(this.innerHTML)">0</li>
+        </ul>    
+        <br>
+        <ul class="fila"> 
+            <li onclick="keyBoard('Q')">Q</li>
+            <li onclick="keyBoard('W')">W</li>
+            <li onclick="keyBoard('E')">E</li>
+            <li onclick="keyBoard('R')">R </li>
+            <li onclick="keyBoard('T')">T</li>
+            <li onclick="keyBoard('Y')">Y</li>
+            <li onclick="keyBoard(this.innerHTML)">U</li>
+            <li onclick="keyBoard(this.innerHTML)">I</li>
+            <li onclick="keyBoard(this.innerHTML)">O</li>
+            <li onclick="keyBoard(this.innerHTML)">P</li>
+        </ul>
+        <br>
+         <ul class="fila"> 
+            <li onclick="keyBoard(this.innerHTML)">A</li>
+            <li onclick="keyBoard(this.innerHTML)">S</li>
+            <li onclick="keyBoard(this.innerHTML)">D</li>
+            <li onclick="keyBoard(this.innerHTML)">F</li>
+            <li onclick="keyBoard(this.innerHTML)">G</li>
+            <li onclick="keyBoard(this.innerHTML)">H</li>
+            <li onclick="keyBoard(this.innerHTML)">J</li>
+            <li onclick="keyBoard(this.innerHTML)">K</li>
+            <li onclick="keyBoard(this.innerHTML)">L</li>
+            <li onclick="keyBoard(this.innerHTML)">Ñ</li>
+         </ul>
+         <br>
+        <ul class="fila"> 
+            <li onclick="keyBoard(this.innerHTML)">Z</li>
+            <li onclick="keyBoard(this.innerHTML)">X</li>
+            <li onclick="keyBoard(this.innerHTML)">C</li>
+            <li onclick="keyBoard(this.innerHTML)">V</li>
+            <li onclick="keyBoard(this.innerHTML)">B</li>
+            <li onclick="keyBoard(this.innerHTML)">N</li>
+            <li onclick="keyBoard(this.innerHTML)">M</li>
+         </ul>    
+    </div>
+    
+    
 </body>
 
 
