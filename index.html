@@ -1,10 +1,34 @@
-<!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>IMDB</title>
+
+	<script type="text/javascript" src="js/core/ahorcado.js"></script>
+	<script type="text/javascript" src="js/ui/ventana.js"></script>
+	<script type="text/javascript" src="js/controller/controller.js"></script>
+
+	<script type="text/javascript" src="js/controller/initialize.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/index.css" >
+
 </head>
+
+
 <body>
-		TEST
+	<a id="start" href=# onclick="start()"> Start </a>
+	
+	<div id="letraInputDiv">
+		<input id="inputLetter" type="text" size=1 maxlength=1 />
+		<a href=# onclick="tryLetter()"> Try </a>		
+	</div>
+
+	<div id="resultUser">
+	</div>
+
+	<div id="wrongLetters"></div>
 </body>
+
+
 </html>
