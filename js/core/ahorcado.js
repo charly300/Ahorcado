@@ -26,7 +26,7 @@ function Ahorcado(){
 
 	this.letterExists = function(c){
 		for(var i = 0; i < film.Title.length; i++)
-			if(film.Title[i] == c){
+			if(film.Title[i] == c)
 				return true;
 				
 		throw c;		
