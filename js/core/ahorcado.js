@@ -3,8 +3,11 @@ String.prototype.replaceAt = function(index, character) {
 }
 
 function Ahorcado(){
-	var film = {Title: 'RAPIDO Y FURIOSO'};
-	var palabraUser = '';	
+	//var film = {Title: 'RAPIDO Y FURIOSO'};
+	this.film;
+	var palabraUser = '';
+	var level = new LevelEasy();
+	var filmDao = new FilmDAO(this);
 	
 	this.inicializarPalabraUser = function(){
 		for(var i = 0; i < film.Title.length; i++)
@@ -28,7 +31,7 @@ function Ahorcado(){
 		for(var i = 0; i < film.Title.length; i++)
 			if(film.Title[i] == c)
 				return true;
-				
+			
 		throw c;		
 	};
 
@@ -43,6 +46,20 @@ function Ahorcado(){
 		return palabraUser;	
 	};
 
-	//CONSTRUCTOR
-	this.inicializarPalabraUser();
+	
+	this.orderFilm = function() {
+		filmDao.orderFilm();
+	};
+	
+	//METODO OBSERVER
+	this.filmReady = function(film){
+		this.film = film;
+		this.inicializarPalabraUser();
+		this.film.Title = this.film.Title.toUpperCase(); 
+		console.log(this.film.Title);
+	};
+	
+	this.start = function() {
+		this.orderFilm();
+	}
 }

@@ -14,7 +14,7 @@ function keyBoard(letra){
 function start(){	
 	ventana.deleteStart();
 	ventana.createEnvironment();
-
+	ahorcado.start();
 	ventana.setPalabraUser(ahorcado.getPalabraUser());
 }
 
