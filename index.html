@@ -11,9 +11,13 @@
 	<script type="text/javascript" src="js/core/ahorcado.js"></script>
 	<script type="text/javascript" src="js/core/api/filmDAO.js"></script>
 	<script type="text/javascript" src="js/core/api/imdbApi.js"></script>
+	<script type="text/javascript" src="js/core/exceptions/lostFilmException.js"></script>
+	<script type="text/javascript" src="js/core/exceptions/winFilmException.js"></script>
+	
 	
 	<script type="text/javascript" src="js/ui/ventana.js"></script>
 	<script type="text/javascript" src="js/controller/controller.js"></script>
+	<script type="text/javascript" src="js/controller/listener.js"></script>
 
 	<script type="text/javascript" src="js/controller/test.js"></script>
 
@@ -25,9 +29,19 @@
 <body>
 	<div id="start"  class="blanco" onclick="start()"> Start </div>
 
-	<div id="resultUser" class="blanco">
-	</div>
+	<div id="loadingFilm">Loading...</div>
 
+	<div id="points" class="blanco"></div>
+
+	<div id="wordUser" class="blanco">
+	</div>
+	
+	<div id="resultUser"></div>
+	
+	<div id="filmPoster"></div>
+	
+	<div id="playAgain" class="blanco" onclick="playAgain()">¿Desea volver a jugar?</div>
+	
 	<div id="wrongLetters"></div>
 	
 	<div id="keyBoard" class="keyBoard">
@@ -78,11 +92,11 @@
             <li onclick="keyBoard('V')">V</li>
             <li onclick="keyBoard('B')">B</li>
             <li onclick="keyBoard('N')">N</li>
-            <li onclick="keyBoard('N')">M</li>
+            <li onclick="keyBoard('M')">M</li>
          </ul>    
     </div>
     
-    <div id="test" onclick="test()">TEST</div>
+<!--     <div id="test" onclick="test()">TEST</div> -->
     
 </body>
 

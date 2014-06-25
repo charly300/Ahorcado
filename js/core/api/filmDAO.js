@@ -5,12 +5,22 @@ function FilmDAO(observer) {
 	
 	
 	this.orderFilm = function(){
-		this.api.orderFilm('tt0111161', this.after);
+		this.api.orderFilm('tt01111' +
+							this.randomNumber().toString() + 
+							this.randomNumber().toString(),
+							this.after);
+	}
+	
+
+	this.randomNumber = function(){
+		return Math.floor((Math.random() * 10)); 
 	}
 	
 	this.after = function(rta) {
 		this.film = eval("(" + rta + ")");
-		observer.filmReady(this.film);
+		
+		if(this.film.Type = 'movie')
+			observer.filmReady(this.film);
 	}
 	
 	
