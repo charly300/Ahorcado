@@ -6,6 +6,10 @@ String.prototype.replaceAt = function(index, character) {
 	return this.substr(0, index) + character + this.substr(index+character.length);
 }
 
+String.prototype.countLetterNoSpace = function(){
+	return this.replace(/\s/g,'').length;
+}
+
 //CLASE AHORACADO
 function Ahorcado(){
 	this.film = null;
@@ -29,6 +33,7 @@ function Ahorcado(){
 	};
 	
 	
+	
 	this.setObserver = function(ob) {
 		observer = ob;
 	}
@@ -41,24 +46,35 @@ function Ahorcado(){
 		return film.Poster;
 	}
 	
+	
+
 	this.getPoints = function() {
 		return points;
 	}
 	
+	
+	this.winFilm = function(){
+		points += 10;
+		throw new WinFilmException();
+	}
+	
 	this.tryLetter = function(c){
-		if(this.letterExists(c)){
-			this.modificarPalabraUser(c);
-//			if(cantLetters <= 0)
-//				throw new WinFilmException();
-		}
-		else{
-			if(!this.wasPressed(c)){
+		if(!this.wasPressed(c)){
+		
+			if(this.letterExists(c)){
+				this.modificarPalabraUser(c);
+				if(cantLetters <= 0)
+					this.winFilm();
+			}
+			else{
 				this.lostLive();
 				wrongLetters.push(c);
 				throw c;
-			}
+				}
 		}
+	
 	}
+	
 
 	this.wasPressed = function(c) {
 		for(var i = 0; i < wrongLetters.length; i++)
@@ -90,7 +106,7 @@ function Ahorcado(){
 		for(var i = 0; i < film.Title.length; i++){
 			if(film.Title[i] == c){
 				palabraUser = palabraUser.replaceAt(i, c);
-				//cantLetters--;
+				cantLetters--;
 			}
 		}
 	}
@@ -109,8 +125,9 @@ function Ahorcado(){
 		this.film = film;
 		this.inicializarPalabraUser();
 		this.film.Title = this.film.Title.toUpperCase(); 
-		cantLetters = this.film.Title.length;
+		cantLetters = this.film.Title.countLetterNoSpace();
 		console.log(this.film.Title);
+		console.log('Cant: ' + cantLetters);
 		observer.filmReady();
 	}
 	

@@ -2,7 +2,9 @@ var ahorcado = new Ahorcado();
 var ventana = new Ventana();
 
 function test(){
-	ahorcado.orderFilm();
+//	ahorcado.orderFilm();
+	
+	document.getElementById('points').className = 'circleM';
 	
 	/*
 	this.after = function(rta) {
@@ -13,3 +15,4 @@ function test(){
 	api.orderFilm('tt0111161', this.after);
 	*/
 }
+

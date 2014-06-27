@@ -24,17 +24,20 @@ function Ventana(){
 		document.getElementById('wrongLetters').innerHTML = '';
 	}
 	
-	this.displayLivesLost = function(){
-		document.getElementById('resultUser').innerHTML = "Perdiste";
-		document.getElementById('wordUser').style.display = 'none';
-		document.getElementById('resultUser').style.display = 'block';
+	this.hideInput = function(){
 		document.getElementById('keyBoard').style.display = 'none';
 		document.getElementById('wrongLetters').style.display = 'none';
-		document.getElementById('playAgain').style.display = 'block';
+		document.getElementById('playAgain').style.display = 'block';		
 	}
 	
-	this.displayWinner = function() {
+	this.displayLostFilm = function() {
+		document.getElementById('resultUser').innerHTML = "Perdiste";
+		document.getElementById('resultUser').style.display = 'block';
+	} 
+	
+	this.displayWinnerFilm = function() {
 		document.getElementById('resultUser').innerHTML = "Ganaste";
+		document.getElementById('resultUser').style.display = 'block';
 	}
 	
 	this.displayFilmPoster = function(src){

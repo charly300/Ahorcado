@@ -9,11 +9,12 @@ function Controller() {
 		}
 		catch(c){
 			if(c instanceof WinFilmException){
+				ventana.setPalabraUser(ahorcado.getPalabraUser());
 				this.win();
 				return;
 			}
 			if(c  instanceof LostFilmException)
-				this.livesLost();
+				this.lostFilm();
 			else
 				ventana.appendWrongLetter(c);
 		}
@@ -21,14 +22,20 @@ function Controller() {
 	
 	
 	this.win = function() {
-		ventana.displayWinner();
+		this.finishFilm();
+		ventana.displayWinnerFilm();
 	}
 	
 	
-	this.livesLost = function(){
-		ventana.displayLivesLost();
-		console.log(this.ahorcado.getPoster());
+	this.lostFilm = function() {
+		this.finishFilm();
+		ventana.displayLostFilm();
+	}
+	
+	this.finishFilm = function(){
+		ventana.hideInput();
 		ventana.displayFilmPoster(this.ahorcado.getPoster());
+		ventana.setPoints(ahorcado.getPoints());
 	}
 	
 	this.startGame = function(){
