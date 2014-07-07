@@ -92,7 +92,7 @@ function Ahorcado(){
 	
 	this.lostFilm = function() {
 		points -= 10;
-		throw new LostFilmException();		
+		throw new LostFilmException(film.Title);		
 	}
 	
 	this.letterExists = function(c){

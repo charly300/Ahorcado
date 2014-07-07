@@ -4,7 +4,7 @@ var ventana = new Ventana();
 function test(){
 //	ahorcado.orderFilm();
 	
-	document.getElementById('points').className = 'circleM';
+	document.getElementById('solicitarPista').className = 'disabled';
 	
 	/*
 	this.after = function(rta) {

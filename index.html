@@ -8,6 +8,7 @@
 	<script type="text/javascript" src="js/ajax/ajax.js"></script>
 	
 	<script type="text/javascript" src="js/core/levelEasy.js"></script>
+	<script type="text/javascript" src="js/core/pista.js"></script>
 	<script type="text/javascript" src="js/core/pistasController.js"></script>
 	<script type="text/javascript" src="js/core/ahorcado.js"></script>
 	<script type="text/javascript" src="js/core/api/filmDAO.js"></script>
@@ -39,7 +40,10 @@
 	
 	<div id="resultUser"></div>
 	
-	<div id="filmPoster"></div>
+	<div id="divFilmPoster">
+		<img id="filmPoster" src="" alt="Folder" height="300" width="180">
+	</div>
+	
 	
 	<div id="playAgain" class="blanco" onclick="playAgain()">¿Desea volver a jugar?</div>
 	
@@ -104,7 +108,7 @@
     		<ul id="pistas">
     		</ul>
     		<span id="msjPistas"></span>
-    		<a onclick="solicitarPista()">Solicitar pista</a>
+    		<a onclick="solicitarPista()" id="solicitarPista">Solicitar pista</a>
     </div>
     
 </body>

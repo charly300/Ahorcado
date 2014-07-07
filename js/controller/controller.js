@@ -9,12 +9,14 @@ function Controller() {
 		}
 		catch(c){
 			if(c instanceof WinFilmException){
-				this.updatePalabraUser();
 				this.win();
 				return;
 			}
-			if(c  instanceof LostFilmException)
+			if(c  instanceof LostFilmException){
 				this.lostFilm();
+				ventana.setPalabraUser(c.title);
+				return;
+			}
 			else
 				ventana.appendWrongLetter(c);
 		}
@@ -60,6 +62,7 @@ function Controller() {
 		ventana.displayLoading();
 		ventana.cleanWrongLetters();
 		ventana.clearPistas();
+		ventana.clearPosterFilm();
 		ahorcado.setObserver(this);
 		ahorcado.playAgain();
 	}

@@ -14,9 +14,10 @@ function Ventana(){
 		document.getElementById('keyBoard').style.display = 'block';
 		document.getElementById('wrongLetters').style.display = 'block';
 		document.getElementById('divPistas').style.display = 'block';
+		document.getElementById('divFilmPoster').style.display = 'block';
+		this.clearPosterFilm();
 		
 		document.getElementById('playAgain').style.display = 'none';
-		document.getElementById('filmPoster').style.display = 'none';
 		document.getElementById('resultUser').style.display = 'none';
 		
 	}
@@ -42,8 +43,12 @@ function Ventana(){
 	}
 	
 	this.displayFilmPoster = function(src){
-		document.getElementById('filmPoster').innerHTML = '<img src="' + src + '" alt="Folder" height="300" width="180">';		
+		document.getElementById('filmPoster').src = src;	
 		document.getElementById('filmPoster').style.display = 'block';		
+	}
+	
+	this.clearPosterFilm = function(){
+		document.getElementById('filmPoster').src = 'img/question.png';
 	}
 	
 	this.setPoints = function(p) {
@@ -66,7 +71,7 @@ function Ventana(){
 	}
 	
 	this.addPista = function(pista){
-		document.getElementById('pistas').innerHTML += '<li>' + pista + '</li>';
+		document.getElementById('pistas').innerHTML += '<li>' + pista.key + ": " + pista.value + '</li>';
 	}
 	
 	this.maxCantPistas = function(){

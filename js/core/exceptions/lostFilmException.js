@@ -1,6 +1,3 @@
-function LostFilmException(){
-	/**
-	 * POR AHORA VACIA
-	 * SOLO SE USA PARA MARCAR QUE NO SE ADIVINÓ LA PALABRA 
-	 */
+function LostFilmException(title){
+	this.title = title;
 }

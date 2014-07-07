@@ -6,6 +6,6 @@ function PistasController(film){
 	this.getPista = function(){
 		if(--this.cant < 0)
 			throw new MaxCantPistasException();
-		return film.Director;
+		return new Pista("Director", film.Director);
 	}
 }
