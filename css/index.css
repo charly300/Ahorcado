@@ -30,6 +30,11 @@ a.disabled{
 	cursor: default;	
 }
 
+a.enabled{
+	pointer-events: auto;
+	cursor: pointer;	
+}
+
 .circleM{
 	/*Animaciones*/
 	-webkit-animation: myfirst 5s; /* Chrome, Safari, Opera */
@@ -48,10 +53,6 @@ a.disabled{
     to {background: yellow;}
 } 
 
-#solicitarPista{
-	text-align: center;
-	cursor: pointer;
-}
 
 #loadingFilm{
 	display: none;
@@ -82,11 +83,37 @@ a.disabled{
 }
 
 #divFilmPoster{
+	height: 300px;
 	display: none;
 }
 
 
+#divFilmPoster img{
+	float: left;
+}
+
+#divPistas{
+	display: none;
+	float: left;
+}
+
+#msjPistas{
+	height: 10%;
+}
+
+#solicitarPista{
+	margin-bottom: 10px;
+	text-align: center;
+	cursor: pointer;
+}
+
+#pistas{
+	height: 70%;
+}
+
+
 #wrongLetters{
+	clear: both;
     background-color: #FFF;
     margin-top: 10px;
     margin-left: 20%;
@@ -94,8 +121,4 @@ a.disabled{
     padding: 20 20 20 20;
     text-align: center;
     display: none;
-}
-
-#divPistas{
-	display: none;
 }

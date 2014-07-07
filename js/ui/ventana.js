@@ -76,10 +76,12 @@ function Ventana(){
 	
 	this.maxCantPistas = function(){
 		document.getElementById('msjPistas').innerHTML = 'No se puede pedir mas pistas';
+		document.getElementById('solicitarPista').className = 'disabled';
 	}
 	
 	this.clearPistas = function(){
 		document.getElementById('pistas').innerHTML = '';
 		document.getElementById('msjPistas').innerHTML = '';
+		document.getElementById('solicitarPista').className = 'enabled';
 	}
 }	
