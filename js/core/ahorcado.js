@@ -19,7 +19,8 @@ function Ahorcado(){
 	var observer;
 	var palabraUser = '';
 	var cantLetters;
-	var wrongLetters = [];
+	var pressedLetters = [];
+	var pistaController;
 	var level = new LevelEasy();
 	var filmDao = new FilmDAO(this);
 	
@@ -60,6 +61,7 @@ function Ahorcado(){
 	
 	this.tryLetter = function(c){
 		if(!this.wasPressed(c)){
+			pressedLetters.push(c);
 		
 			if(this.letterExists(c)){
 				this.modificarPalabraUser(c);
@@ -68,24 +70,23 @@ function Ahorcado(){
 			}
 			else{
 				this.lostLive();
-				wrongLetters.push(c);
 				throw c;
-				}
+			}
 		}
 	
 	}
 	
 
 	this.wasPressed = function(c) {
-		for(var i = 0; i < wrongLetters.length; i++)
-			if(wrongLetters[i] == c)
+		for(var i = 0; i < pressedLetters.length; i++)
+			if(pressedLetters[i] == c)
 				return true;
 		
 		return false;
 	}
 	
 	this.lostLive = function(){
-		if(--lives <= 0)
+		if(--lives < 0)
 			this.lostFilm();
 	}
 	
@@ -105,8 +106,8 @@ function Ahorcado(){
 	this.modificarPalabraUser = function(c){			
 		for(var i = 0; i < film.Title.length; i++){
 			if(film.Title[i] == c){
-				palabraUser = palabraUser.replaceAt(i, c);
 				cantLetters--;
+				palabraUser = palabraUser.replaceAt(i, c);
 			}
 		}
 	}
@@ -126,6 +127,8 @@ function Ahorcado(){
 		this.inicializarPalabraUser();
 		this.film.Title = this.film.Title.toUpperCase(); 
 		cantLetters = this.film.Title.countLetterNoSpace();
+		pistaController = new PistasController(this.film);
+		
 		console.log(this.film.Title);
 		console.log('Cant: ' + cantLetters);
 		observer.filmReady();
@@ -139,7 +142,14 @@ function Ahorcado(){
 	this.playAgain = function(){
 		lives = 5;
 		palabraUser = '';
-		wrongLetters = [];
+		pressedLetters = [];
 		this.orderFilm();
+	}
+	
+	this.getPista = function(){
+		if(points >= 5){
+			points -= 5;
+			return pistaController.getPista();
+		}
 	}
 }

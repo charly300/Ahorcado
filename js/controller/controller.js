@@ -9,7 +9,7 @@ function Controller() {
 		}
 		catch(c){
 			if(c instanceof WinFilmException){
-				ventana.setPalabraUser(ahorcado.getPalabraUser());
+				this.updatePalabraUser();
 				this.win();
 				return;
 			}
@@ -26,6 +26,9 @@ function Controller() {
 		ventana.displayWinnerFilm();
 	}
 	
+	this.updatePalabraUser = function(){
+		ventana.setPalabraUser(ahorcado.getPalabraUser());
+	}
 	
 	this.lostFilm = function() {
 		this.finishFilm();
@@ -34,6 +37,7 @@ function Controller() {
 	
 	this.finishFilm = function(){
 		ventana.hideInput();
+		this.updatePalabraUser();
 		ventana.displayFilmPoster(this.ahorcado.getPoster());
 		ventana.setPoints(ahorcado.getPoints());
 	}
@@ -55,7 +59,19 @@ function Controller() {
 	this.playAgain = function() {
 		ventana.displayLoading();
 		ventana.cleanWrongLetters();
+		ventana.clearPistas();
 		ahorcado.setObserver(this);
 		ahorcado.playAgain();
+	}
+	
+	this.solicitarPista = function(){
+		try{
+			ventana.addPista(ahorcado.getPista());
+			ventana.setPoints(ahorcado.getPoints());
+		}
+		catch(e){
+			if(e instanceof MaxCantPistasException)
+				ventana.maxCantPistas();
+		}
 	}
 }

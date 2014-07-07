@@ -6,14 +6,15 @@
 	<title>Ahorcado</title>
 
 	<script type="text/javascript" src="js/ajax/ajax.js"></script>
-
+	
 	<script type="text/javascript" src="js/core/levelEasy.js"></script>
+	<script type="text/javascript" src="js/core/pistasController.js"></script>
 	<script type="text/javascript" src="js/core/ahorcado.js"></script>
 	<script type="text/javascript" src="js/core/api/filmDAO.js"></script>
 	<script type="text/javascript" src="js/core/api/imdbApi.js"></script>
 	<script type="text/javascript" src="js/core/exceptions/lostFilmException.js"></script>
 	<script type="text/javascript" src="js/core/exceptions/winFilmException.js"></script>
-	
+	<script type="text/javascript" src="js/core/exceptions/maxCantPistasException.js"></script>
 	
 	<script type="text/javascript" src="js/ui/ventana.js"></script>
 	<script type="text/javascript" src="js/controller/controller.js"></script>
@@ -98,6 +99,13 @@
     </div>
     
     <div id="test" onclick="test()">TEST</div>
+    
+    <div id="divPistas">
+    		<ul id="pistas">
+    		</ul>
+    		<span id="msjPistas"></span>
+    		<a onclick="solicitarPista()">Solicitar pista</a>
+    </div>
     
 </body>
 

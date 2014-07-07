@@ -11,3 +11,7 @@ function start(){
 function playAgain() {
 	controller.playAgain();
 }
+
+function solicitarPista(){
+	controller.solicitarPista();
+}

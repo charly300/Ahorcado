@@ -4,8 +4,16 @@ function FilmDAO(observer) {
 	this.film = '';
 	
 	
+//	this.orderFilm = function(){
+//		this.api.orderFilm('tt01111' +
+//							this.randomNumber().toString() + 
+//							this.randomNumber().toString(),
+//							this.after);
+//	}
+	
 	this.orderFilm = function(){
-		this.api.orderFilm('tt01111' +
+		this.api.orderFilm('tt0111' +
+							this.randomNumber().toString() + 
 							this.randomNumber().toString() + 
 							this.randomNumber().toString(),
 							this.after);

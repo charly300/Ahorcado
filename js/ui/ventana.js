@@ -13,6 +13,7 @@ function Ventana(){
 		document.getElementById('wordUser').style.display = 'block';
 		document.getElementById('keyBoard').style.display = 'block';
 		document.getElementById('wrongLetters').style.display = 'block';
+		document.getElementById('divPistas').style.display = 'block';
 		
 		document.getElementById('playAgain').style.display = 'none';
 		document.getElementById('filmPoster').style.display = 'none';
@@ -62,5 +63,18 @@ function Ventana(){
 
 	this.getInputLetter = function(){
 		return document.getElementById('inputLetter').value;
+	}
+	
+	this.addPista = function(pista){
+		document.getElementById('pistas').innerHTML += '<li>' + pista + '</li>';
+	}
+	
+	this.maxCantPistas = function(){
+		document.getElementById('msjPistas').innerHTML = 'No se puede pedir mas pistas';
+	}
+	
+	this.clearPistas = function(){
+		document.getElementById('pistas').innerHTML = '';
+		document.getElementById('msjPistas').innerHTML = '';
 	}
 }	
