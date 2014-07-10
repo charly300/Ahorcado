@@ -1,4 +1,6 @@
 function Ventana(){
+	var vidas = 0;
+	
 	this.deleteStart = function(){
 		var element = document.getElementById('start');
  		element.parentNode.removeChild(element);
@@ -15,6 +17,8 @@ function Ventana(){
 		document.getElementById('wrongLetters').style.display = 'block';
 		document.getElementById('divPistas').style.display = 'block';
 		document.getElementById('divFilmPoster').style.display = 'block';
+		document.getElementById('ahorcado').style.display = 'block';
+		this.clearLifes();
 		this.clearPosterFilm();
 		
 		document.getElementById('playAgain').style.display = 'none';
@@ -65,7 +69,11 @@ function Ventana(){
 		document.getElementById('wrongLetters').innerHTML += c;
 	}
 
-
+	this.lostLife = function(){
+		vidas++;
+		document.getElementById('ahorcadoImg').src = 'img/vidas/vidas' + vidas + '.jpg';	
+	}
+	
 	this.getInputLetter = function(){
 		return document.getElementById('inputLetter').value;
 	}
@@ -83,5 +91,10 @@ function Ventana(){
 		document.getElementById('pistas').innerHTML = '';
 		document.getElementById('msjPistas').innerHTML = '';
 		document.getElementById('solicitarPista').className = 'enabled';
+	}
+	
+	this.clearLifes = function(){
+		vidas = 0;
+		document.getElementById('ahorcadoImg').src = 'img/vidas/vidas0.jpg';
 	}
 }	

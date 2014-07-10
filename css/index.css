@@ -49,6 +49,7 @@ a.enabled{
 }
 
 #playAgain{
+	clear: both;
 	display: none;
 }
 
@@ -108,4 +109,5 @@ a.enabled{
 
 #ahorcado{
 	float: right;
+	display: none;
 }

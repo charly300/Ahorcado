@@ -13,12 +13,15 @@ function Controller() {
 				return;
 			}
 			if(c  instanceof LostFilmException){
+				ventana.lostLife();
 				this.lostFilm();
 				ventana.setPalabraUser(c.title);
 				return;
 			}
-			else
+			else{
 				ventana.appendWrongLetter(c);
+				ventana.lostLife();
+			}
 		}
 	}
 	

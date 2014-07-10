@@ -145,7 +145,7 @@ function Ahorcado(){
 	}
 	
 	this.playAgain = function(){
-		lives = 5;
+		lives = 4;
 		palabraUser = '';
 		pressedLetters = [];
 		this.orderFilm();
