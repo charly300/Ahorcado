@@ -7,8 +7,13 @@ String.prototype.replaceAt = function(index, character) {
 }
 
 String.prototype.countLetterNoSpace = function(){
-	return this.replace(/\s/g,'').length;
+	var p = this.replace(/\:/g, ''); //QUITA LOS DOS PUNTOS
+	p = p.replace(/\s/g, '');		 //QUITA LOS ESPACIOS
+	p = p.replace(/\'/g, '');		 //QUITA LAS COMILLAS SIMPLES 
+	p = p.replace(/\./g, '');		 //QUITA LOS PUNTOS
+	return p.length;
 }
+
 
 //CLASE AHORACADO
 function Ahorcado(){
@@ -41,7 +46,7 @@ function Ahorcado(){
 	
 	this.getTitle = function(){
 		return film.Title;
-	};
+	}
 
 	this.getPoster = function() {
 		return film.Poster;

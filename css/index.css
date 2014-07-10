@@ -35,24 +35,6 @@ a.enabled{
 	cursor: pointer;	
 }
 
-.circleM{
-	/*Animaciones*/
-	-webkit-animation: myfirst 5s; /* Chrome, Safari, Opera */
-    animation: myfirst 5s;
-}
-
-/* Chrome, Safari, Opera */
-@-webkit-keyframes myfirst {
-    from {background: red;}
-    to {background: yellow;}
-}
-
-/* Standard syntax */
-@keyframes myfirst {
-    from {background: red;}
-    to {background: yellow;}
-} 
-
 
 #loadingFilm{
 	display: none;
@@ -88,27 +70,27 @@ a.enabled{
 }
 
 
-#divFilmPoster img{
+#divFilmPoster{
 	float: left;
 }
 
 #divPistas{
 	display: none;
-	float: left;
+	float:left;
 }
 
 #msjPistas{
 	height: 10%;
 }
 
+#pistas{
+	height: 30%;
+}
+
 #solicitarPista{
 	margin-bottom: 10px;
 	text-align: center;
 	cursor: pointer;
-}
-
-#pistas{
-	height: 70%;
 }
 
 
@@ -121,4 +103,9 @@ a.enabled{
     padding: 20 20 20 20;
     text-align: center;
     display: none;
+}
+
+
+#ahorcado{
+	float: right;
 }
