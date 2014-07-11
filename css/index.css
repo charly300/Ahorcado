@@ -55,6 +55,8 @@ a.enabled{
 
 #points{
 	display: none;
+	float: right;
+	margin-right: 100px;
 }
 
 #wordUser{

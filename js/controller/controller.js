@@ -66,6 +66,7 @@ function Controller() {
 		ventana.cleanWrongLetters();
 		ventana.clearPistas();
 		ventana.clearPosterFilm();
+		ventana.clearLifes();
 		ahorcado.setObserver(this);
 		ahorcado.playAgain();
 	}
