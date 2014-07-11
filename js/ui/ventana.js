@@ -18,6 +18,7 @@ function Ventana(){
 		document.getElementById('divPistas').style.display = 'block';
 		document.getElementById('divFilmPoster').style.display = 'block';
 		document.getElementById('ahorcado').style.display = 'block';
+		document.getElementById('solicitarPista').style.display = 'block';	
 		this.clearLifes();
 		this.clearPosterFilm();
 		
@@ -33,6 +34,7 @@ function Ventana(){
 	this.hideInput = function(){
 		document.getElementById('keyBoard').style.display = 'none';
 		document.getElementById('wrongLetters').style.display = 'none';
+		document.getElementById('solicitarPista').style.display = 'none';
 		document.getElementById('playAgain').style.display = 'block';		
 	}
 	
@@ -74,9 +76,6 @@ function Ventana(){
 		document.getElementById('ahorcadoImg').src = 'img/vidas/vidas' + vidas + '.jpg';	
 	}
 	
-	this.getInputLetter = function(){
-		return document.getElementById('inputLetter').value;
-	}
 	
 	this.addPista = function(pista){
 		document.getElementById('pistas').innerHTML += '<li>' + pista.key + ": " + pista.value + '</li>';
