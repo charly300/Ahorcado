@@ -7,7 +7,7 @@ String.prototype.countLetterNoSpace = function(){
 	p = p.replace(/\'/g, '');		 //QUITA LAS COMILLAS SIMPLES 
 	p = p.replace(/\./g, '');		 //QUITA LOS PUNTOS
 	return p.length;
-}
+};
 
 
 function test(){

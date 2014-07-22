@@ -23,43 +23,43 @@ function Controller() {
 				ventana.lostLife();
 			}
 		}
-	}
+	};
 	
 	
 	this.win = function() {
 		this.finishFilm();
 		ventana.displayWinnerFilm();
-	}
+	};
 	
 	this.updatePalabraUser = function(){
 		ventana.setPalabraUser(ahorcado.getPalabraUser());
-	}
+	};
 	
 	this.lostFilm = function() {
 		this.finishFilm();
 		ventana.displayLostFilm();
-	}
+	};
 	
 	this.finishFilm = function(){
 		ventana.hideInput();
 		this.updatePalabraUser();
 		ventana.displayFilmPoster(this.ahorcado.getPoster());
 		ventana.setPoints(ahorcado.getPoints());
-	}
+	};
 	
 	this.startGame = function(){
 		ventana.deleteStart();
 		ventana.displayLoading();
 		ahorcado.setObserver(this);
 		ahorcado.start();
-	}
+	};
 	
 	
 	this.filmReady = function(){
 		ventana.setPalabraUser(ahorcado.getPalabraUser());
 		ventana.setPoints(ahorcado.getPoints());
 		ventana.createEnvironment();
-	}
+	};
 	
 	this.playAgain = function() {
 		ventana.displayLoading();
@@ -69,7 +69,7 @@ function Controller() {
 		ventana.clearLifes();
 		ahorcado.setObserver(this);
 		ahorcado.playAgain();
-	}
+	};
 	
 	this.solicitarPista = function(){
 		try{
@@ -80,5 +80,5 @@ function Controller() {
 			if(e instanceof MaxCantPistasException)
 				ventana.maxCantPistas();
 		}
-	}
+	};
 }

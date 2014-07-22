@@ -17,19 +17,22 @@ function FilmDAO(observer) {
 							this.randomNumber().toString() + 
 							this.randomNumber().toString(),
 							this.after);
-	}
+	};
 	
 
 	this.randomNumber = function(){
 		return Math.floor((Math.random() * 10)); 
-	}
+	};
 	
 	this.after = function(rta) {
 		this.film = eval("(" + rta + ")");
 		
 		if(this.film.Type = 'movie')
 			observer.filmReady(this.film);
-	}
+		else{
+			console.log('Llego una serie: ' + rta);
+		}
+	};
 	
 	
 }

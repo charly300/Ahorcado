@@ -3,6 +3,6 @@ function IdGenerator(){
 		var id = 'tt0111161';
 		
 		return id;
-	}
+	};
 	
 }

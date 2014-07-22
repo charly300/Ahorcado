@@ -4,7 +4,7 @@
  */
 String.prototype.replaceAt = function(index, character) {
 	return this.substr(0, index) + character + this.substr(index+character.length);
-}
+};
 
 String.prototype.countLetterNoSpace = function(){
 	var p = this.replace(/\:/g, ''); //QUITA LOS DOS PUNTOS
@@ -12,7 +12,7 @@ String.prototype.countLetterNoSpace = function(){
 	p = p.replace(/\'/g, '');		 //QUITA LAS COMILLAS SIMPLES 
 	p = p.replace(/\./g, '');		 //QUITA LOS PUNTOS
 	return p.length;
-}
+};
 
 
 //CLASE AHORACADO
@@ -42,27 +42,27 @@ function Ahorcado(){
 	
 	this.setObserver = function(ob) {
 		observer = ob;
-	}
+	};
 	
 	this.getTitle = function(){
 		return film.Title;
-	}
+	};
 
 	this.getPoster = function() {
 		return film.Poster;
-	}
+	};
 	
 	
 
 	this.getPoints = function() {
 		return points;
-	}
+	};
 	
 	
 	this.winFilm = function(){
 		points += 10;
 		throw new WinFilmException();
-	}
+	};
 	
 	this.tryLetter = function(c){
 		if(!this.wasPressed(c)){
@@ -79,7 +79,7 @@ function Ahorcado(){
 			}
 		}
 	
-	}
+	};
 	
 
 	this.wasPressed = function(c) {
@@ -88,17 +88,17 @@ function Ahorcado(){
 				return true;
 		
 		return false;
-	}
+	};
 	
 	this.lostLive = function(){
 		if(--lives < 0)
 			this.lostFilm();
-	}
+	};
 	
 	this.lostFilm = function() {
 		points -= 10;
 		throw new LostFilmException(film.Title);		
-	}
+	};
 	
 	this.letterExists = function(c){
 		for(var i = 0; i < film.Title.length; i++)
@@ -115,16 +115,16 @@ function Ahorcado(){
 				palabraUser = palabraUser.replaceAt(i, c);
 			}
 		}
-	}
+	};
 
 	this.getPalabraUser = function(){
 		return palabraUser;	
-	}
+	};
 
 	
 	this.orderFilm = function() {
 		filmDao.orderFilm();
-	}
+	};
 	
 	//METODO OBSERVER
 	this.filmReady = function(film){
@@ -137,24 +137,24 @@ function Ahorcado(){
 		console.log(this.film.Title);
 		console.log('Cant: ' + cantLetters);
 		observer.filmReady();
-	}
+	};
 	
 	this.start = function() {
 		points = 50;
 		this.playAgain();
-	}
+	};
 	
 	this.playAgain = function(){
 		lives = 4;
 		palabraUser = '';
 		pressedLetters = [];
 		this.orderFilm();
-	}
+	};
 	
 	this.getPista = function(){
 		if(points >= 5){
 			points -= 5;
 			return pistaController.getPista();
 		}
-	}
+	};
 }

@@ -5,6 +5,6 @@ function ImdbApi(){
 		null,
 		null,
 		after);
-	}
+	};
 
 }

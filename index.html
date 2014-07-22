@@ -25,94 +25,103 @@
 
 	<link rel="stylesheet" type="text/css" href="css/index.css" >
 	<link rel="stylesheet" type="text/css" href="css/keyBoard.css" >
+	<link rel="stylesheet" type="text/css" href="css/game.css" >
 </head>
 
 
 <body>
-	<div id="start"  class="blanco" onclick="start()"> Start </div>
 
-	<div id="loadingFilm">Loading...</div>
-
-	<div id="points" class="circle"></div>
-
-	<div id="wordUser" class="blanco"></div>
+	<header>TITLE</header>
 	
 	
-	<div>
-			<div id="divFilmPoster">
-				<img id="filmPoster" src="" alt="Folder" height="300" width="180">
+	<section>
+			<div id="start"  class="blanco" onclick="start()">Start</div>
+		
+			<div id="loadingFilm"></div>
+		
+			<div id=divResult>
+					<div id="resultUser" class="blanco"></div>
+					<div id="wordUser" class="blanco"></div>
 			</div>
 			
-			<div id="divPistas">
-		    		<ul id="pistas"></ul>
-		    		<div id="msjPistas"></div>
-		    		<a onclick="solicitarPista()" id="solicitarPista">Solicitar pista</a>
-		   	</div>
-		   	
-			<div id="ahorcado">
-				<div id="resultUser"></div>
-				<img id="ahorcadoImg" alt="ahorcado" src="" height="222" width="224">
-				<div id="wrongLetters"></div>
-			</div>	
-	</div>
+			<div id="divGame">
+					<figure id="divFilmPoster">
+						<img id="filmPoster" src="" alt="Folder" height="300" width="180">
+					</figure>
+					
+					<div id="divPistas">
+							<div id="pistas"><ul id="listaPistas"></ul></div>	
+				    		<div id="msjPistas"></div>
+				    		<a onclick="solicitarPista()" id="solicitarPista">Solicitar pista</a>
+				   	</div>
+				   	
+					<div id="divAhorcado">
+						<div id="points" class="circle"></div>			
+						<img id="ahorcadoImg" alt="ahorcado" src="" height="222" width="224">
+						<div id="wrongLetters"></div>
+					</div>	
+			</div>
+		
+			
+			
+			<div id="playAgain" class="blanco" onclick="playAgain()">¿Desea volver a jugar?</div>
+			
+			
+			<div id="keyBoard" class="keyBoard">
+		
+		        <ul class="fila"> 
+		            <li onclick="keyBoard('1')">1</li>
+		            <li onclick="keyBoard('2')">2</li>
+		            <li onclick="keyBoard('3')">3</li>
+		            <li onclick="keyBoard('4')">4</li>
+		            <li onclick="keyBoard('5')">5</li>
+		            <li onclick="keyBoard('6')">6</li>
+		            <li onclick="keyBoard('7')">7</li>
+		            <li onclick="keyBoard('8')">8</li>
+		            <li onclick="keyBoard('9')">9</li>
+		            <li onclick="keyBoard('0')">0</li>
+		        </ul>    
+		        <br>
+		        <ul class="fila"> 
+		            <li onclick="keyBoard('Q')">Q</li>
+		            <li onclick="keyBoard('W')">W</li>
+		            <li onclick="keyBoard('E')">E</li>
+		            <li onclick="keyBoard('R')">R </li>
+		            <li onclick="keyBoard('T')">T</li>
+		            <li onclick="keyBoard('Y')">Y</li>
+		            <li onclick="keyBoard('U')">U</li>
+		            <li onclick="keyBoard('I')">I</li>
+		            <li onclick="keyBoard('O')">O</li>
+		            <li onclick="keyBoard('P')">P</li>
+		        </ul>
+		        <br>
+		         <ul class="fila"> 
+		            <li onclick="keyBoard('A')">A</li>
+		            <li onclick="keyBoard('S')">S</li>
+		            <li onclick="keyBoard('D')">D</li>
+		            <li onclick="keyBoard('F')">F</li>
+		            <li onclick="keyBoard('G')">G</li>
+		            <li onclick="keyBoard('H')">H</li>
+		            <li onclick="keyBoard('J')">J</li>
+		            <li onclick="keyBoard('K')">K</li>
+		            <li onclick="keyBoard('L')">L</li>
+		            <li onclick="keyBoard('Ñ')">Ñ</li>
+		         </ul>
+		         <br>
+		        <ul class="fila"> 
+		            <li onclick="keyBoard('Z')">Z</li>
+		            <li onclick="keyBoard('X')">X</li>
+		            <li onclick="keyBoard('C')">C</li>
+		            <li onclick="keyBoard('V')">V</li>
+		            <li onclick="keyBoard('B')">B</li>
+		            <li onclick="keyBoard('N')">N</li>
+		            <li onclick="keyBoard('M')">M</li>
+		            <li onclick="keyBoard('&')">&</li>
+		         </ul>    
+		    </div>
 
+	</section>
 	
-	
-	<div id="playAgain" class="blanco" onclick="playAgain()">¿Desea volver a jugar?</div>
-	
-	
-	<div id="keyBoard" class="keyBoard">
-
-        <ul class="fila"> 
-            <li onclick="keyBoard('1')">1</li>
-            <li onclick="keyBoard('2')">2</li>
-            <li onclick="keyBoard('3')">3</li>
-            <li onclick="keyBoard('4')">4</li>
-            <li onclick="keyBoard('5')">5</li>
-            <li onclick="keyBoard('6')">6</li>
-            <li onclick="keyBoard('7')">7</li>
-            <li onclick="keyBoard('8')">8</li>
-            <li onclick="keyBoard('9')">9</li>
-            <li onclick="keyBoard('0')">0</li>
-        </ul>    
-        <br>
-        <ul class="fila"> 
-            <li onclick="keyBoard('Q')">Q</li>
-            <li onclick="keyBoard('W')">W</li>
-            <li onclick="keyBoard('E')">E</li>
-            <li onclick="keyBoard('R')">R </li>
-            <li onclick="keyBoard('T')">T</li>
-            <li onclick="keyBoard('Y')">Y</li>
-            <li onclick="keyBoard('U')">U</li>
-            <li onclick="keyBoard('I')">I</li>
-            <li onclick="keyBoard('O')">O</li>
-            <li onclick="keyBoard('P')">P</li>
-        </ul>
-        <br>
-         <ul class="fila"> 
-            <li onclick="keyBoard('A')">A</li>
-            <li onclick="keyBoard('S')">S</li>
-            <li onclick="keyBoard('D')">D</li>
-            <li onclick="keyBoard('F')">F</li>
-            <li onclick="keyBoard('G')">G</li>
-            <li onclick="keyBoard('H')">H</li>
-            <li onclick="keyBoard('J')">J</li>
-            <li onclick="keyBoard('K')">K</li>
-            <li onclick="keyBoard('L')">L</li>
-            <li onclick="keyBoard('Ñ')">Ñ</li>
-         </ul>
-         <br>
-        <ul class="fila"> 
-            <li onclick="keyBoard('Z')">Z</li>
-            <li onclick="keyBoard('X')">X</li>
-            <li onclick="keyBoard('C')">C</li>
-            <li onclick="keyBoard('V')">V</li>
-            <li onclick="keyBoard('B')">B</li>
-            <li onclick="keyBoard('N')">N</li>
-            <li onclick="keyBoard('M')">M</li>
-            <li onclick="keyBoard('&')">&</li>
-         </ul>    
-    </div>
     
 <!--     <div id="test" onclick="test()">TEST</div> -->
     

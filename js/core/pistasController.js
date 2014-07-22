@@ -17,23 +17,23 @@ function PistasController(film){
 			r = f[i++]();
 		
 		return r;
-	}
+	};
 	
 	this.getPistaDirector = function(){
 		if(film.Director == 'N/A')
 			return false;
 		return new Pista("Director", film.Director);
-	}
+	};
 	
 	this.getPistaYear = function(){
 		if(film.anio == 'N/A')
 			return false;
 		return new Pista("Year", film.Year);
-	}
+	};
 	
 	this.getPistaActors = function(){
 		return new Pista("Actors", film.Actors);
-	}
+	};
 	
 	
 	f.push(this.getPistaDirector);
