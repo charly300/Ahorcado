@@ -82,19 +82,6 @@ a.enabled{
 	cursor: auto;
 }
 
-#playAgain {
-	clear: both;
-	display: none;
-}
-
-#points {
-	display: none;
-	float: right;
-	margin-right: 100px;
-	background-color: #3498DB;
-}
-
-
 #wordUser {
 	background-color: #FFF;
 	display: none;
@@ -102,6 +89,13 @@ a.enabled{
 	letter-spacing: .15em;
 	word-spacing: .2em;
 }
+
+#playAgain {
+	clear: both;
+	display: none;
+}
+
+
 
 
 

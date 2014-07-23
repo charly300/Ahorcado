@@ -1,0 +1,64 @@
+@CHARSET "ISO-8859-1";
+
+
+
+
+
+#divFilmPoster {
+	height: 300px;
+	display: none;
+	float: left;
+}
+
+#divPistas {
+	display: none;
+	float:left;
+}
+
+#divAhorcado {
+	float: right;
+	display: none;
+}
+#pistas {
+	height: 30%;
+}
+
+#msjPistas {
+	height: 10%;
+}
+
+
+#points {
+	display: none;
+	float: right;
+	margin-right: 100px;
+	background-color: #3498DB;
+}
+
+
+#wrongLetters {
+	clear: both;
+    background-color: #FFF;
+    margin-top: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 20 20 20 20;
+    text-align: center;
+    display: none;
+}
+
+#solicitarPista {
+	margin-bottom: 10px;
+	text-align: center;
+	cursor: pointer;
+	border: solid;
+	border-color: #444;
+	padding: 15px;
+	font-size: 1.1em;
+}
+
+#solicitarPista:hover {
+	background-color: #444;
+	color: #FFF;
+}
+
