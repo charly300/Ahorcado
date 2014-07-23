@@ -38,6 +38,10 @@ function Ventana(){
 		document.getElementById('playAgain').style.display = 'block';		
 	};
 	
+	this.hidePlayAgain = function(){
+		document.getElementById('playAgain').style.display = 'none';
+	};
+	
 	this.displayLostFilm = function() {
 		var resultUser = document.getElementById('resultUser');
 		

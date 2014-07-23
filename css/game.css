@@ -1,9 +1,5 @@
 @CHARSET "ISO-8859-1";
 
-
-
-
-
 #divFilmPoster {
 	height: 300px;
 	display: none;
@@ -19,14 +15,33 @@
 	float: right;
 	display: none;
 }
+
 #pistas {
-	height: 30%;
+	height: 15%;
+	clear: both;
 }
 
 #msjPistas {
 	height: 10%;
 }
 
+
+#solicitarPista {
+	margin-bottom: 10px;
+	text-align: center;
+	cursor: pointer;
+	border: solid;
+	border-color: #444;
+	padding: 15px;
+	font-size: 1.1em;
+	min-width: 150px;
+	max-width: 150px;
+}
+
+#solicitarPista:hover {
+	background-color: #444;
+	color: #FFF;
+}
 
 #points {
 	display: none;
@@ -46,19 +61,3 @@
     text-align: center;
     display: none;
 }
-
-#solicitarPista {
-	margin-bottom: 10px;
-	text-align: center;
-	cursor: pointer;
-	border: solid;
-	border-color: #444;
-	padding: 15px;
-	font-size: 1.1em;
-}
-
-#solicitarPista:hover {
-	background-color: #444;
-	color: #FFF;
-}
-
